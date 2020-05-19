@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.toolBar {
+
+}
+
+.editor {
+    flex: 1;
+    padding: 0px 20px;
+}

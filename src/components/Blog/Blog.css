@@ -1,0 +1,37 @@
+.card_blog {
+    height: 250px;
+}
+
+.card_blog-body {
+    display: flex;
+    padding: 1rem !important;
+    flex-direction: row !important;
+}
+
+.card_blog-text-data {
+    margin-right: 10px !important;
+}
+
+.card_blog-title {
+    font-weight: bold !important;
+    margin-bottom: 7px !important;
+}
+
+.card_blog-text {
+    max-height: 185px;
+    overflow: hidden;
+}
+
+.card_blog-img {
+    width: 25% !important;
+}
+
+.row_blog:not(:last-child) {
+    padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .card_blog-img {
+        display: none;
+    }
+}
