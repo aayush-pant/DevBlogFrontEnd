@@ -13,7 +13,6 @@ class Blogs extends Component {
         return (
             <Jumbotron className="blog-container" style={{ margin: "0px" }}>
                 <Blog title={title} text={text} image={image} />
-                <Blog title={title} text={text} image={image} />
             </Jumbotron>
         )
     }

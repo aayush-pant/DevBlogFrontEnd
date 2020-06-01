@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Layout from './hoc/Layout/Layout'
 import Blogs from './containers/Blogs/Blogs';
-import AddBlog from './containers/AddBlog/AddBlog';
+// import AddBlog from './containers/AddBlog/AddBlog';
 import Thoughts from './containers/Thoughts/Thoughts';
 import About from './containers/About/About';
 
@@ -18,7 +18,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Blogs} />
             <Route path="/thoughts" component={Thoughts} />
-            <Route path="/add-blog" component={AddBlog} />
+            {/* <Route path="/add-blog" component={AddBlog} /> */}
             <Route path="/about" component={About} />
           </Switch>
         </Layout>

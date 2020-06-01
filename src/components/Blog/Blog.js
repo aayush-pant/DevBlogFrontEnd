@@ -5,7 +5,7 @@ import './Blog.css'
 const blog = props => {
     return (
         <Row className="row_blog justify-content-center">
-            <Col lg="8">
+            <Col lg="6">
                 <Card className="card_blog">
                     <Card.Body className="card_blog-body">
                         <div className="card_blog-text-data">

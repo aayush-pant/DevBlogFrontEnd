@@ -1,0 +1,44 @@
+.about_main {
+    font-size: 16px;
+}
+
+.about_subheading {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about_img {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about_img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    width: 170px;
+    height: 170px;
+}
+
+.about_name {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about_text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    text-align: justify;
+    width: 80%;
+}
