@@ -15,12 +15,11 @@ const blogTextDesktop = (blogText) => {
     let blogDescText = blogText.slice(0, 300).split("|");
     let i = 0
     blogDescText.forEach(text => {
-        console.log(blogDescText.length)
         if (i < blogDescText.length - 1){
-            blogDesc.push(<Aux>{text}<br/></Aux>)
+            blogDesc.push(<Aux key={i}>{text}<br/></Aux>)
         }
         else {
-            blogDesc.push(<Aux>{text + "..."}<span style={{ color: "blue" }}>read more</span><br/></Aux>)
+            blogDesc.push(<Aux key={i}>{text + "..."}<span style={{ color: "blue" }}>read more</span><br/></Aux>)
         }
         i += 1
     });
