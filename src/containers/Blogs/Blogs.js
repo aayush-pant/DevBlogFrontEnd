@@ -1,18 +1,23 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Jumbotron } from 'react-bootstrap'
 
 import Blog from '../../components/Blog/Blog'
-
+import blogData from '../../assets/database/blogData'
 import './Blogs.css'
 
-class Blogs extends Component {
+class Blogs extends PureComponent {
+    renderBlogs = () => {
+        let renderComp = []
+        blogData.forEach(blog => {
+            renderComp.push(<Blog key={blog.id} id={blog.id} title={blog.title} data={blog.data} image={blog.image} />)
+        })
+        return renderComp
+    }
+
     render() {
-        let title = "Card Title"
-        let text = "Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content."
-        let image = "/assets/images/travel.jpeg"
         return (
             <Jumbotron className="blog-container" style={{ margin: "0px" }}>
-                <Blog title={title} text={text} image={image} />
+                {this.renderBlogs()}
             </Jumbotron>
         )
     }

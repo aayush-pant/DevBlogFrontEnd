@@ -10,7 +10,7 @@
 .toolbar_nav {
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 56px;
     padding: 0.25rem 0.75rem;
 }
 
@@ -75,7 +75,7 @@
     }
     .toolbar_toggle-button {
         position: absolute;
-        left: 1rem
+        left: 16px;
     }
 }
 

@@ -1,3 +1,11 @@
 .App {
     height: 100%;
 }
+
+.row {
+    margin: 0px !important;
+}
+
+.outer_col {
+    padding: 0px !important;
+}
