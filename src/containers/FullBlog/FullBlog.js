@@ -22,6 +22,14 @@ class FullBlog extends Component {
         return renderBlogText
     }
 
+    titleCase = (str) => {
+        str = str.toLowerCase().split(' ');
+        for (var i = 0; i < str.length; i++) {
+            str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+        }
+        return str.join(' ');
+    }
+
     componentDidMount() {
         let id = this.props.match.params.id
         fetch('/assets/database/blogData.json')
@@ -38,7 +46,7 @@ class FullBlog extends Component {
                         </Row>
                         <Row className="justify-content-center">
                             <Col className="col_fullblog pt-3" lg="6">
-                                <Card.Title className="fullblog_title">{blog.title}</Card.Title>
+                                <Card.Title className="fullblog_title">{this.titleCase(blog.title)}</Card.Title>
                             </Col>
                         </Row>
                         <Row className="justify-content-center">

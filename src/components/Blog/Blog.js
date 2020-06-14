@@ -5,25 +5,28 @@ import { NavLink } from 'react-router-dom'
 import Aux from '../../hoc/Aux/Aux'
 import './Blog.css'
 
-const blogTextSmall = (blogText) => {
-    let blogDesc = blogText.slice(0, 100);
-    return (<Aux>{blogDesc + "..."}<span style={{ color: "blue" }}>read more</span><br /></Aux>)
-}
-
 const blogTextDesktop = (blogText) => {
     let blogDesc = [];
-    let blogDescText = blogText.slice(0, 300).split("|");
+    let blogDescText = blogText.split("|");
     let i = 0
     blogDescText.forEach(text => {
-        if (i < blogDescText.length - 1){
-            blogDesc.push(<Aux key={i}>{text}<br/></Aux>)
+        if (i < blogDescText.length - 1) {
+            blogDesc.push(<Aux key={i}>{text}<br /></Aux>)
         }
         else {
-            blogDesc.push(<Aux key={i}>{text + "..."}<span style={{ color: "blue" }}>read more</span><br/></Aux>)
+            blogDesc.push(<Aux key={i}>{text + "..."}<br /></Aux>)
         }
         i += 1
     });
     return blogDesc
+}
+
+const titleCase = (str) => {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return str.join(' ');
 }
 
 const blog = props => {
@@ -34,9 +37,8 @@ const blog = props => {
                     <Card className="card_blog">
                         <Card.Body className="card_blog-body">
                             <div className="card_blog-text-data">
-                                <Card.Title className="card_blog-title">{props.title}</Card.Title>
-                                <Card.Text className="card_blog-text d-desktop">{blogTextDesktop(props.data)}</Card.Text>
-                                <Card.Text className="card_blog-text d-mobile">{blogTextSmall(props.data)}</Card.Text>
+                                <Card.Title className="card_blog-title">{titleCase(props.title)}</Card.Title>
+                                <Card.Text className="card_blog-text">{blogTextDesktop(props.data)}</Card.Text>
                             </div>
                             <Card.Img className="card_blog-img" src={props.image} />
                         </Card.Body>
