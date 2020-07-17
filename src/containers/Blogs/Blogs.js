@@ -19,6 +19,7 @@ class Blogs extends PureComponent {
             .then(blogData => {
                 let renderComp = []
                 blogData.forEach(blog => {
+                    console.log(blog)
                     renderComp.push(<Blog key={blog.id} id={blog.id} title={blog.title} data={blog.data} image={blog.image} />)
                 })
                 this.setState({

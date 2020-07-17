@@ -32,11 +32,13 @@ class FullBlog extends Component {
 
     componentDidMount() {
         let id = this.props.match.params.id
+        console.log(id)
         fetch('/assets/database/blogData.json')
             .then(res => res.json())
             .then(data => data.blogData)
             .then(blogData => {
-                let blog = blogData[id - 1]
+                console.log(blogData)
+                let blog = blogData.find(blog => blog.id === id)
                 let renderComp = (
                     <Aux key={id}>
                         <Row className="justify-content-center">
@@ -67,7 +69,6 @@ class FullBlog extends Component {
 
     render() {
         let blog = this.state.blog
-        console.log(blog)
         return (
             <Jumbotron className="fullblog-container" style={{ margin: "0px" }}>
                 {blog}
